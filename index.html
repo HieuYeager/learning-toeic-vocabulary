@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOEIC Vocabulary</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">📚 TOEIC Vocabulary</h1>
+
+      <!-- Đã đăng nhập -->
+      <div class="auth-area" id="authArea">
+        <div class="user-info" id="userInfo" hidden>
+          <span class="user-email" id="userEmail"></span>
+          <button class="btn btn-outline" id="btnLogout">Đăng xuất</button>
+        </div>
+
+        <!-- Chưa đăng nhập -->
+        <div class="auth-forms" id="authForms">
+          <a href="login.html" class="btn btn-outline">Đăng nhập</a>
+          <a href="signup.html" class="btn btn-primary">Đăng ký</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <p class="auth-message" id="authMessage" hidden></p>
+
+  <main class="main">
+    <!-- Trang chủ -->
+    <section id="viewHome" class="view">
+      <div class="home-header">
+        <h2>Danh sách từ vựng</h2>
+        <p class="progress-total" id="progressTotal">Đã học 0/1.258 từ</p>
+      </div>
+      <div class="list-grid" id="listGrid"></div>
+    </section>
+
+    <!-- Flashcard -->
+    <section id="viewFlashcard" class="view" hidden>
+      <div class="mode-header">
+        <button class="btn btn-outline" data-back>← Quay lại</button>
+        <span id="flashcardTitle">Flashcard</span>
+        <span id="flashcardCounter"></span>
+        <button class="btn btn-outline btn-sm btn-filter" hidden>📖</button>
+      </div>
+      <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-face flashcard-front">
+              <span class="card-badge" id="cardBadge" hidden></span>
+              <div id="cardWord"></div>
+              <div id="cardPhonetic"></div>
+              <div id="cardPos"></div>
+              <p class="hint">Nhấn để lật</p>
+            </div>
+            <div class="flashcard-face flashcard-back">
+              <div id="cardMeaning"></div>
+              <div id="cardExample"></div>
+              <div id="cardExampleVi"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard-actions" id="flashcardActions">
+        <button class="btn btn-outline" data-prev>⬅ Trước</button>
+        <button class="btn btn-success" data-know>✅ Đã nhớ</button>
+        <button class="btn btn-danger" data-forgot>❓ Chưa nhớ</button>
+        <button class="btn btn-outline btn-review" data-relearn hidden>🔄 Học lại</button>
+        <button class="btn btn-outline" data-next>Tiếp ➡</button>
+      </div>
+      <div class="flashcard-done" id="flashcardDone" hidden>🎉 Hoàn thành list này!</div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="viewQuiz" class="view" hidden>
+      <div class="mode-header">
+        <button class="btn btn-outline" data-back>← Quay lại</button>
+        <span id="quizTitle">Quiz</span>
+        <span id="quizScore">Score: 0/10</span>
+      </div>
+      <div class="quiz-container">
+        <h3 id="quizQuestion"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div id="quizFeedback" class="quiz-feedback"></div>
+        <button class="btn btn-primary" id="quizNext" hidden>Câu tiếp theo</button>
+      </div>
+      <div class="flashcard-done" id="quizDone" hidden></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/flashcard.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký - TOEIC Vocabulary</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1 class="logo">📚 TOEIC Vocabulary</h1>
+      <h2 class="auth-title">Đăng ký tài khoản</h2>
+
+      <form id="signupForm" class="auth-form-col">
+        <input type="email" id="signupEmail" name="email" placeholder="Email" required autocomplete="username">
+        <input type="password" id="signupPassword" name="password" placeholder="Mật khẩu (tối thiểu 6 ký tự)" minlength="6" required autocomplete="new-password">
+        <button type="submit" class="btn btn-primary">Đăng ký</button>
+      </form>
+
+      <p class="auth-message" id="authMessage" hidden></p>
+
+      <p class="auth-switch">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+      <p class="auth-switch"><a href="index.html">← Quay về trang chủ</a></p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
